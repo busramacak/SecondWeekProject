@@ -7,7 +7,12 @@
 
     <fragment
         android:id="@+id/wordListFragment"
-        android:name="com.bmprj.secondweekproject.WordListFragment"
+        android:name="com.bmprj.secondweekproject.ui.wordList.WordListFragment"
         android:label="fragment_word_list"
         tools:layout="@layout/fragment_word_list" />
+    <fragment
+        android:id="@+id/learnedWordsFragment"
+        android:name="com.bmprj.secondweekproject.ui.learnedList.LearnedWordsFragment"
+        android:label="LearnedWordsFragment"
+        tools:layout="@layout/fragment_learned_words"/>
 </navigation>
