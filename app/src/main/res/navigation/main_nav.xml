@@ -9,10 +9,23 @@
         android:id="@+id/wordListFragment"
         android:name="com.bmprj.secondweekproject.ui.wordList.WordListFragment"
         android:label="fragment_word_list"
-        tools:layout="@layout/fragment_word_list" />
+        tools:layout="@layout/fragment_word_list" >
+        <action
+            android:id="@+id/action_wordListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/learnedWordsFragment"
         android:name="com.bmprj.secondweekproject.ui.learnedList.LearnedWordsFragment"
         android:label="LearnedWordsFragment"
-        tools:layout="@layout/fragment_learned_words"/>
+        tools:layout="@layout/fragment_learned_words">
+        <action
+            android:id="@+id/action_learnedWordsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.bmprj.secondweekproject.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>
