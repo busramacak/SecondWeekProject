@@ -1,0 +1,452 @@
+[
+  {
+    "word": "apple",
+    "translate": "elma",
+    "pronounce": "a-pul",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "She ate an apple.",
+    "sentenceTranslate": "O bir elma yedi."
+  },
+  {
+    "word": "book",
+    "translate": "kitap",
+    "pronounce": "buk",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "I am reading a book.",
+    "sentenceTranslate": "Bir kitap okuyorum."
+  },
+  {
+    "word": "car",
+    "translate": "araba",
+    "pronounce": "kar",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "He drives a car.",
+    "sentenceTranslate": "O bir araba kullanıyor."
+  },
+  {
+    "word": "dog",
+    "translate": "köpek",
+    "pronounce": "dog",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "The dog is barking.",
+    "sentenceTranslate": "Köpek havlıyor."
+  },
+  {
+    "word": "elephant",
+    "translate": "fil",
+    "pronounce": "el-e-fant",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The elephant is huge.",
+    "sentenceTranslate": "Fil çok büyük."
+  },
+  {
+    "word": "flower",
+    "translate": "çiçek",
+    "pronounce": "fla-wer",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "She loves flowers.",
+    "sentenceTranslate": "Çiçekleri çok sever."
+  },
+  {
+    "word": "guitar",
+    "translate": "gitar",
+    "pronounce": "gi-tar",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "He plays the guitar.",
+    "sentenceTranslate": "O gitar çalıyor."
+  },
+  {
+    "word": "house",
+    "translate": "ev",
+    "pronounce": "haus",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "They live in a house.",
+    "sentenceTranslate": "Onlar bir evde yaşıyorlar."
+  },
+  {
+    "word": "ice",
+    "translate": "buz",
+    "pronounce": "ais",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "The ice is melting.",
+    "sentenceTranslate": "Buz eriyor."
+  },
+  {
+    "word": "juice",
+    "translate": "meyve suyu",
+    "pronounce": "ju:s",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "I like orange juice.",
+    "sentenceTranslate": "Portakal suyunu severim."
+  },
+  {
+    "word": "kite",
+    "translate": "uçurtma",
+    "pronounce": "kayt",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "The kite is flying high.",
+    "sentenceTranslate": "Uçurtma yüksekten uçuyor."
+  },
+  {
+    "word": "lamp",
+    "translate": "lamba",
+    "pronounce": "lamp",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "The lamp is bright.",
+    "sentenceTranslate": "Lamba parlak."
+  },
+  {
+    "word": "monkey",
+    "translate": "maymun",
+    "pronounce": "mon-ki",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The monkey is climbing.",
+    "sentenceTranslate": "Maymun tırmanıyor."
+  },
+  {
+    "word": "notebook",
+    "translate": "defter",
+    "pronounce": "noht-buk",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "I wrote in my notebook.",
+    "sentenceTranslate": "Defterime yazdım."
+  },
+  {
+    "word": "orange",
+    "translate": "portakal",
+    "pronounce": "or-inj",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "She ate an orange.",
+    "sentenceTranslate": "O bir portakal yedi."
+  },
+  {
+    "word": "pencil",
+    "translate": "kurşun kalem",
+    "pronounce": "pen-sil",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "The pencil is sharp.",
+    "sentenceTranslate": "Kurşun kalem keskin."
+  },
+  {
+    "word": "queen",
+    "translate": "kraliçe",
+    "pronounce": "kwin",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The queen wears a crown.",
+    "sentenceTranslate": "Kraliçe bir taç takar."
+  },
+  {
+    "word": "rabbit",
+    "translate": "tavşan",
+    "pronounce": "ra-bit",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "The rabbit is hopping.",
+    "sentenceTranslate": "Tavşan zıplıyor."
+  },
+  {
+    "word": "snake",
+    "translate": "yılan",
+    "pronounce": "sneyk",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The snake slithered away.",
+    "sentenceTranslate": "Yılan süründü ve uzaklaştı."
+  },
+  {
+    "word": "table",
+    "translate": "masa",
+    "pronounce": "tey-bıl",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "The table is round.",
+    "sentenceTranslate": "Masa yuvarlak."
+  },
+  {
+    "word": "umbrella",
+    "translate": "şemsiye",
+    "pronounce": "um-brel-uh",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "I need an umbrella.",
+    "sentenceTranslate": "Bir şemsiye ihtiyacım var."
+  },
+  {
+    "word": "vase",
+    "translate": "vazo",
+    "pronounce": "veys",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The vase is beautiful.",
+    "sentenceTranslate": "Vazo güzel."
+  },
+  {
+    "word": "water",
+    "translate": "su",
+    "pronounce": "wo-ter",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "Drink a glass of water.",
+    "sentenceTranslate": "Bir bardak su iç."
+  },
+  {
+    "word": "yogurt",
+    "translate": "yoğurt",
+    "pronounce": "yo-gurt",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "She eats yogurt every day.",
+    "sentenceTranslate": "Her gün yoğurt yer."
+  },
+  {
+    "word": "zebra",
+    "translate": "zebra",
+    "pronounce": "zee-bruh",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The zebra has stripes.",
+    "sentenceTranslate": "Zebra çizgili."
+  },
+  {
+    "word": "airplane",
+    "translate": "uçak",
+    "pronounce": "air-pleyn",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The airplane is flying.",
+    "sentenceTranslate": "Uçak uçuyor."
+  },
+  {
+    "word": "bicycle",
+    "translate": "bisiklet",
+    "pronounce": "bahy-sik-uhl",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "She rides a bicycle.",
+    "sentenceTranslate": "O bisiklet biniyor."
+  },
+  {
+    "word": "cloud",
+    "translate": "bulut",
+    "pronounce": "klaud",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "The cloud is white.",
+    "sentenceTranslate": "Bulut beyaz."
+  },
+  {
+    "word": "dragon",
+    "translate": "ejderha",
+    "pronounce": "drag-uhn",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "The dragon breathes fire.",
+    "sentenceTranslate": "Ejderha ateş üflüyor."
+  },
+  {
+    "word": "eagle",
+    "translate": "kartal",
+    "pronounce": "ee-guhl",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The eagle is soaring.",
+    "sentenceTranslate": "Kartal süzülüyor."
+  },
+  {
+    "word": "football",
+    "translate": "futbol",
+    "pronounce": "fut-bawl",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "They play football on weekends.",
+    "sentenceTranslate": "Hafta sonları futbol oynarlar."
+  },
+  {
+    "word": "giraffe",
+    "translate": "zürafa",
+    "pronounce": "juh-raf",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The giraffe has a long neck.",
+    "sentenceTranslate": "Zürafa uzun bir boynu var."
+  },
+  {
+    "word": "horizon",
+    "translate": "ufuk",
+    "pronounce": "huh-rai-zuhn",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "The sun sets on the horizon.",
+    "sentenceTranslate": "Güneş ufukta batıyor."
+  },
+  {
+    "word": "igloo",
+    "translate": "kar evi",
+    "pronounce": "ig-loo",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "The igloo is made of ice.",
+    "sentenceTranslate": "Kar evi, buzdan yapılmıştır."
+  },
+  {
+    "word": "jacket",
+    "translate": "ceket",
+    "pronounce": "ja-kit",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "He wore a warm jacket.",
+    "sentenceTranslate": "Sıcak bir ceket giydi."
+  },
+  {
+    "word": "koala",
+    "translate": "koala",
+    "pronounce": "ko-ah-luh",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The koala is sleeping in a tree.",
+    "sentenceTranslate": "Koala bir ağacın üzerinde uyuyor."
+  },
+  {
+    "word": "lighthouse",
+    "translate": "fener kulesi",
+    "pronounce": "laɪt-haʊs",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "The lighthouse guides ships.",
+    "sentenceTranslate": "Fener kulesi gemilere yol gösterir."
+  },
+  {
+    "word": "magnet",
+    "translate": "mıknatıs",
+    "pronounce": "mag-nit",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The magnet sticks to the fridge.",
+    "sentenceTranslate": "Mıknatıs buzdolabına yapışır."
+  },
+  {
+    "word": "novel",
+    "translate": "roman",
+    "pronounce": "nov-uhl",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "She is reading a novel.",
+    "sentenceTranslate": "O bir roman okuyor."
+  },
+  {
+    "word": "octopus",
+    "translate": "ahtapot",
+    "pronounce": "ok-tuh-puhs",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "The octopus has eight arms.",
+    "sentenceTranslate": "Ahtapotun sekiz kolu var."
+  },
+  {
+    "word": "pyramid",
+    "translate": "piramit",
+    "pronounce": "pyr-uh-mid",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "The pyramid is an ancient structure.",
+    "sentenceTranslate": "Piramit eski bir yapıdır."
+  },
+  {
+    "word": "quilt",
+    "translate": "yorgan",
+    "pronounce": "kwilt",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "She made a beautiful quilt.",
+    "sentenceTranslate": "Güzel bir yorgan yaptı."
+  },
+  {
+    "word": "robot",
+    "translate": "robot",
+    "pronounce": "roh-bot",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The robot is programmed to assist.",
+    "sentenceTranslate": "Robot yardımcı olmak için programlanmıştır."
+  },
+  {
+    "word": "snowflake",
+    "translate": "kar tanesi",
+    "pronounce": "snoh-fleyk",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "Each snowflake is unique.",
+    "sentenceTranslate": "Her kar tanesi benzersizdir."
+  },
+  {
+    "word": "telescope",
+    "translate": "teleskop",
+    "pronounce": "tel-uh-skohp",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "He uses a telescope to view stars.",
+    "sentenceTranslate": "Yıldızları görmek için teleskop kullanıyor."
+  },
+  {
+    "word": "umbrella",
+    "translate": "şemsiye",
+    "pronounce": "uhm-brel-uh",
+    "difficulty": "EASY",
+    "imgResId": null,
+    "sentence": "She opened her umbrella.",
+    "sentenceTranslate": "Şemsiyesini açtı."
+  },
+  {
+    "word": "village",
+    "translate": "köy",
+    "pronounce": "vil-ij",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "They live in a small village.",
+    "sentenceTranslate": "Küçük bir köyde yaşıyorlar."
+  },
+  {
+    "word": "whale",
+    "translate": "balina",
+    "pronounce": "wehl",
+    "difficulty": "MEDIUM",
+    "imgResId": null,
+    "sentence": "The whale is swimming in the ocean.",
+    "sentenceTranslate": "Balina okyanusta yüzüyor."
+  },
+  {
+    "word": "xylophone",
+    "translate": "ksilofon",
+    "pronounce": "zai-luh-fon",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "He plays the xylophone.",
+    "sentenceTranslate": "O ksilofon çalıyor."
+  },
+  {
+    "word": "yacht",
+    "translate": "yat",
+    "pronounce": "yaht",
+    "difficulty": "HARD",
+    "imgResId": null,
+    "sentence": "They sailed on a yacht.",
+    "sentenceTranslate": "Bir yatla denize açıldılar."
+  }
+]

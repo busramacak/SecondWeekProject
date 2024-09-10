@@ -14,5 +14,7 @@ data class Word(
     val pronounce:String,
     val difficulty: Difficulty,
     val imgResId:Int?,
-    val isLearned:Boolean=false
+    val isLearned:Boolean=false,
+    val sentence:String,
+    val sentenceTranslate:String
 )

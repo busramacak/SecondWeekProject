@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/wordListFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/wordListFragment"
@@ -31,5 +31,14 @@
         <argument
             android:name="wordId"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.bmprj.secondweekproject.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_wordListFragment"
+            app:destination="@id/wordListFragment" />
     </fragment>
 </navigation>

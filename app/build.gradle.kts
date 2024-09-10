@@ -49,6 +49,8 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp (libs.androidx.room.compiler)
 
+    implementation("com.google.code.gson:gson:2.8.8")
+
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation (libs.androidx.navigation.ui.ktx)
 

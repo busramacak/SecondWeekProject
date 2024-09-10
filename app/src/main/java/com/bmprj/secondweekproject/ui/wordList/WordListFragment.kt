@@ -19,19 +19,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
     private val wordAdapter by lazy { WordAdapter(::cardClicked) }
     private val viewModel by viewModels<WordListViewModel>()
 
-    val array = ArrayList<Word>()
-    val model = Word(word = "Difficulty", translate = "zorlu", difficulty = Difficulty.HARD, pronounce = "eejej",imgResId = R.drawable.icon_back)
-    val model1 = Word(word = "Difficulasdasdasdasdassdfsadfsadfsadfsadfsadfsadfsadfsdfdasdasdty", translate = "zorlu", difficulty = Difficulty.MEDIUM,pronounce = "eejej", imgResId = R.drawable.icon_back)
-    val model2 = Word(word = "Difficultyaa", translate = "zorlu", difficulty = Difficulty.EASY, pronounce = "eejej",imgResId = R.drawable.icon_back)
-    val model3 = Word(word = "Diffffffficulasdasdasdasdassdfsadfsadfsadfsadfsadfsadfsadfsdfdasdasdty", translate = "zorlu", difficulty = Difficulty.MEDIUM,pronounce = "eejej", imgResId = R.drawable.icon_back)
     override fun setupViews() {
-
-        array.add(model)
-        array.add(model1)
-        array.add(model2)
-        array.add(model3)
-
-        viewModel.insertAllWords(array)
         setupAdapter()
         viewModel.gelAllWords()
         setupLiveDataObserver()
