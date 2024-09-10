@@ -23,6 +23,14 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
         setupAdapter()
         viewModel.gelAllWords()
         setupLiveDataObserver()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
+        binding.swipeRefresh.setOnRefreshListener {
+            viewModel.refreshData()
+            binding.swipeRefresh.isRefreshing=false
+        }
     }
 
     private fun setupAdapter() {
@@ -55,5 +63,6 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
 
             }
         }
+
     }
 }

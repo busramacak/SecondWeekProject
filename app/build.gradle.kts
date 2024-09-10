@@ -43,6 +43,8 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.swiperefreshlayout)
+
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.android)
 
