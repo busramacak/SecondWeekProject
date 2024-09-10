@@ -16,4 +16,7 @@ interface WordDAO {
 
     @Query("SELECT * FROM word WHERE isLearned=1")
     suspend fun getAllLearnedWords():List<Word>
+
+    @Query("SELECT * FROM word WHERE id=:id")
+    suspend fun getDetail(id:Int):Word
 }

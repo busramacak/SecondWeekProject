@@ -33,7 +33,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
     }
 
     private fun cardClicked(id:Int){
-        val action = WordListFragmentDirections.actionWordListFragmentToDetailFragment(id)
+        val action = WordListFragmentDirections.actionWordListFragmentToDetailFragment(id, getString(R.string.word))
         findNavController().navigate(action)
     }
 

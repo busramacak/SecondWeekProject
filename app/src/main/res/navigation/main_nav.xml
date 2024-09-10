@@ -31,6 +31,15 @@
         <argument
             android:name="wordId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_detailFragment_to_wordListFragment"
+            app:destination="@id/wordListFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_learnedWordsFragment"
+            app:destination="@id/learnedWordsFragment" />
+        <argument
+            android:name="back"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
