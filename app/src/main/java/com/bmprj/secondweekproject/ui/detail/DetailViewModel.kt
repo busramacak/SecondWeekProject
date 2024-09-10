@@ -23,6 +23,10 @@ class DetailViewModel @Inject constructor(
     private val detailWord = MutableStateFlow<UiState<Word>>(UiState.Loading)
     val _detailWord = detailWord.asStateFlow()
 
+
+    private val setLearned = MutableStateFlow<UiState<Unit>>(UiState.Loading)
+    val _setLearned = setLearned.asStateFlow()
+
     fun getDetail(id:Int) = viewModelScope.launch {
         dbRepository.getDetail(id)
             .onStart {
@@ -31,6 +35,17 @@ class DetailViewModel @Inject constructor(
                 detailWord.emit(UiState.Error(it))
             }.collect{
                 detailWord.emit((UiState.Success(it)))
+            }
+    }
+
+    fun setLearned(id:Int, isLearned:Int) = viewModelScope.launch{
+        dbRepository.setLearned(id,isLearned)
+            .onStart {
+                setLearned.emit(UiState.Loading)
+            }.catch {
+                setLearned.emit(UiState.Error(it))
+            }.collect{
+                setLearned.emit((UiState.Success(it)))
             }
     }
 }

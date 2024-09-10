@@ -8,4 +8,5 @@ interface DbRepository {
     suspend fun getAllWord():Flow<List<Word>>
     suspend fun getAllLearnedWords():Flow<List<Word>>
     suspend fun getDetail(id:Int):Flow<Word>
+    suspend fun setLearned(id:Int, isLearned:Int):Flow<Unit>
 }

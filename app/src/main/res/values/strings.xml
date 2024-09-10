@@ -6,5 +6,6 @@
     <string name="learnedWordsTitle">Learned Words</string>
 
     <string name="word">word</string>
-    <string name="learned">learned</string>
+    <string name="learned">Learned</string>
+    <string name="unLearned">UnLearned</string>
 </resources>

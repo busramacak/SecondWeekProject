@@ -15,6 +15,8 @@ class WordAdapter(
     override fun bind(binding: WordListLayoutBinding, item: Word) {
         binding.apply {
             wordText.text=item.word
+            println("${item.word} +++++++ ${item.isLearned}")
+
             when(item.difficulty){
                 Difficulty.EASY ->{
                     easy.setDrawable(true)

@@ -1,7 +1,6 @@
 package com.bmprj.secondweekproject.ui.detail
 
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -16,8 +15,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
     private val viewModel by viewModels<DetailViewModel>()
     private val bundle: DetailFragmentArgs by navArgs()
-    private val wordId:Int by lazy { bundle.wordId }
-    private val back:String by lazy { bundle.back }
+    private val wordId: Int by lazy { bundle.wordId }
+    private val back: String by lazy { bundle.back }
 
     override fun setupViews() {
         viewModel.getDetail(wordId)
@@ -27,23 +26,54 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
     private fun setupLiveDataObserver() {
         lifecycleScope.launchWhenStarted {
-            viewModel._detailWord.collect{ state ->
-                when(state){
-                    is UiState.Success ->{
-                       with(binding){
-                           wordText.text = state.result.word
-                           wordPronounce.text= state.result.pronounce
-                           wordTranslate.text=state.result.translate
-                           sentence.text=state.result.sentence
-                           sentenceTranslate.text=state.result.sentenceTranslate
-                       }
+            viewModel._detailWord.collect { state ->
+                when (state) {
+                    is UiState.Success -> {
+                        with(binding) {
+                            wordText.text = state.result.word
+                            wordPronounce.text = state.result.pronounce
+                            wordTranslate.text = state.result.translate
+                            sentence.text = state.result.sentence
+                            sentenceTranslate.text = state.result.sentenceTranslate
+                            learnButton.text = if (state.result.isLearned) {
+                                getString(R.string.unLearned)
+                            } else {
+                                getString(R.string.learned)
+                            }
+                        }
                     }
 
                     is UiState.Error -> {
                         println(state.error.message)
                     }
+
                     UiState.Loading -> {
 
+                    }
+                }
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel._setLearned.collect { state ->
+                when (state) {
+                    is UiState.Success -> {
+                        with(binding) {
+                            learnButton.text =
+                                if (learnButton.text == getString(R.string.learned)) {
+                                    getString(R.string.unLearned)
+                                } else {
+                                    getString(R.string.learned)
+                                }
+                        }
+                    }
+
+                    is UiState.Error -> {
+                        println(state.error.message)
+                    }
+
+                    UiState.Loading -> {
+                        println("loading learn button click")
                     }
                 }
             }
@@ -51,15 +81,26 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     }
 
     private fun setupListeners() {
-        with(binding){
+        with(binding) {
             backButton.setOnClickListener { backButtonClicked() }
+            learnButton.setOnClickListener { learnButtonClicked() }
         }
     }
 
+    private fun learnButtonClicked() {
+        val isLearned = if (binding.learnButton.text == getString(R.string.learned)) {
+            1
+        } else {
+            0
+        }
+
+        viewModel.setLearned(wordId, isLearned)
+    }
+
     private fun backButtonClicked() {
-        val action = if(back == getString(R.string.learned)){
+        val action = if (back == getString(R.string.learned)) {
             DetailFragmentDirections.actionDetailFragmentToLearnedWordsFragment()
-        }else{
+        } else {
             DetailFragmentDirections.actionDetailFragmentToWordListFragment()
         }
 
