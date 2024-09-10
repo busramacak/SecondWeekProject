@@ -20,8 +20,9 @@ class WordListViewModel @Inject constructor(
     val _words = words.asStateFlow()
 
     fun gelAllWords() = viewModelScope.launch {
-        dbRepository.getAllWord().collect {
-            words.emit(UiState.Success(it))
+        dbRepository.getAllWord().collect { wordList ->
+            val filteredWords = wordList.filter { !it.isLearned }
+            words.emit(UiState.Success(filteredWords))
         }
     }
 }

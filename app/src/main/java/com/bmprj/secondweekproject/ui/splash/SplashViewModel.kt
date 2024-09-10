@@ -20,7 +20,6 @@ class SplashViewModel @Inject constructor(
     private val dbRepository: DbRepository
 ) : ViewModel(){
 
-//    private val jsonData = MutableStateFlow<List<Word>>(listOf())
     private val insert = MutableStateFlow<UiState<Unit>>(UiState.Loading)
     val _insert = insert.asStateFlow()
 
