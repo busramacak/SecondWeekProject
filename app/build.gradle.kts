@@ -46,6 +46,9 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.android)
 
+    implementation(libs.androidx.room.ktx)
+    ksp (libs.androidx.room.compiler)
+
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation (libs.androidx.navigation.ui.ktx)
 
