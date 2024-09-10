@@ -10,7 +10,7 @@ abstract class BaseAdapter<VB: ViewBinding, T:Any>(
     private val inflate : (LayoutInflater, ViewGroup, Boolean) -> VB
 ): RecyclerView.Adapter<BaseViewHolder<VB>>() {
 
-    abstract fun bind(binding: ViewBinding,item:T)
+    abstract fun bind(binding: VB,item:T)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<VB> {
         val binder = inflate(LayoutInflater.from(parent.context),parent,false)
 
@@ -21,5 +21,11 @@ abstract class BaseAdapter<VB: ViewBinding, T:Any>(
 
     override fun onBindViewHolder(holder: BaseViewHolder<VB>, position: Int) {
         bind(holder.binder, list[position])
+    }
+
+    fun updateList(newList:List<T>){
+        list.clear()
+        list.addAll(newList)
+        notifyDataSetChanged()
     }
 }

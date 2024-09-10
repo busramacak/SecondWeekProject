@@ -27,5 +27,9 @@
         android:id="@+id/detailFragment"
         android:name="com.bmprj.secondweekproject.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="wordId"
+            app:argType="integer" />
+    </fragment>
 </navigation>
