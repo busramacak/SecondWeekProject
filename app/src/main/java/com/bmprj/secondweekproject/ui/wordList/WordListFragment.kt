@@ -1,7 +1,6 @@
 package com.bmprj.secondweekproject.ui.wordList
 
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bmprj.secondweekproject.R
 import com.bmprj.secondweekproject.base.BaseFragment
@@ -9,7 +8,9 @@ import com.bmprj.secondweekproject.databinding.FragmentWordListBinding
 import com.bmprj.secondweekproject.model.Word
 import com.bmprj.secondweekproject.ui.WordAdapter
 import com.bmprj.secondweekproject.util.Difficulty
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListBinding::inflate) {
     private val wordAdapter by lazy { WordAdapter(::cardClicked) }
     val array = ArrayList<Word>()
