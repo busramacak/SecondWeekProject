@@ -1,10 +1,11 @@
 package com.bmprj.secondweekproject.model
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.bmprj.secondweekproject.util.Difficulty
 
-@Entity(tableName = "word")
+@Entity(tableName = "word", indices = [Index(value = ["word"], unique = true)])
 data class Word(
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0,

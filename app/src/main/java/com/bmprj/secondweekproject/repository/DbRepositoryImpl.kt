@@ -4,17 +4,17 @@ import com.bmprj.secondweekproject.data.WordDAO
 import com.bmprj.secondweekproject.model.Word
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class DbRepositoryImpl(
+class DbRepositoryImpl @Inject constructor(
     private val wordDao:WordDAO
 ) : DbRepository {
     override suspend fun insertAllWord(wordList: List<Word>): Flow<Unit> = flow {
-        println(wordList)
-        emit(Unit)
+        emit(wordDao.insertAllWords(wordList))
     }
 
 
-    override suspend fun getAllWord(): Flow<List<Word>> {
-        TODO("Not yet implemented")
+    override suspend fun getAllWord(): Flow<List<Word>> = flow{
+        emit(wordDao.getAllWords())
     }
 }
