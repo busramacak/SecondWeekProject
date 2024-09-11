@@ -1,4 +1,5 @@
-package com.bmprj.secondweekproject.ui.splash
+package com.bmprj.secondweekproject.ui.activity
+
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,28 +16,27 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SplashViewModel @Inject constructor(
+class MainActivityViewModel @Inject constructor(
     private val jsonRepository: JsonRepository,
-    private val dbRepository: DbRepository
-) : ViewModel(){
+    private val dbRepository: DbRepository,
+) : ViewModel() {
 
     private val insert = MutableStateFlow<UiState<Unit>>(UiState.Loading)
     val _insert = insert.asStateFlow()
 
-    private fun insertAllWords(wordList:List<Word>) = viewModelScope.launch {
-       dbRepository.insertAllWord(wordList)
-           .onStart {
-               insert.emit(UiState.Loading)
-           }.catch {
-               insert.emit(UiState.Error(it))
-           }.collect{
-               insert.emit(UiState.Success(it))
-           }
+    private fun insertAllWords(wordList: List<Word>) = viewModelScope.launch {
+        dbRepository.insertAllWord(wordList)
+            .onStart {
+                insert.emit(UiState.Loading)
+            }.catch {
+                insert.emit(UiState.Error(it))
+            }.collect {
+                insert.emit(UiState.Success(it))
+            }
     }
 
-    fun getJson() = viewModelScope.launch{
-        jsonRepository.getWordsFromJson().collect{
-//            jsonData.emit(it)
+    fun getJson() = viewModelScope.launch {
+        jsonRepository.getWordsFromJson().collect {
             insertAllWords(it)
         }
     }
