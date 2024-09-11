@@ -4,7 +4,7 @@
     "translate": "elma",
     "pronounce": "a-pul",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_apple",
     "sentence": "She ate an apple.",
     "sentenceTranslate": "O bir elma yedi."
   },
@@ -13,7 +13,7 @@
     "translate": "kitap",
     "pronounce": "buk",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId":  "icon_book",
     "sentence": "I am reading a book.",
     "sentenceTranslate": "Bir kitap okuyorum."
   },
@@ -22,7 +22,7 @@
     "translate": "araba",
     "pronounce": "kar",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_car",
     "sentence": "He drives a car.",
     "sentenceTranslate": "O bir araba kullanıyor."
   },
@@ -31,7 +31,7 @@
     "translate": "köpek",
     "pronounce": "dog",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_dog",
     "sentence": "The dog is barking.",
     "sentenceTranslate": "Köpek havlıyor."
   },
@@ -40,7 +40,7 @@
     "translate": "fil",
     "pronounce": "el-e-fant",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_elephant",
     "sentence": "The elephant is huge.",
     "sentenceTranslate": "Fil çok büyük."
   },
@@ -49,7 +49,7 @@
     "translate": "çiçek",
     "pronounce": "fla-wer",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_flower",
     "sentence": "She loves flowers.",
     "sentenceTranslate": "Çiçekleri çok sever."
   },
@@ -58,7 +58,7 @@
     "translate": "gitar",
     "pronounce": "gi-tar",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_guitar",
     "sentence": "He plays the guitar.",
     "sentenceTranslate": "O gitar çalıyor."
   },
@@ -67,7 +67,7 @@
     "translate": "ev",
     "pronounce": "haus",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_house",
     "sentence": "They live in a house.",
     "sentenceTranslate": "Onlar bir evde yaşıyorlar."
   },
@@ -76,7 +76,7 @@
     "translate": "buz",
     "pronounce": "ais",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_ice",
     "sentence": "The ice is melting.",
     "sentenceTranslate": "Buz eriyor."
   },
@@ -85,7 +85,7 @@
     "translate": "meyve suyu",
     "pronounce": "ju:s",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_juice",
     "sentence": "I like orange juice.",
     "sentenceTranslate": "Portakal suyunu severim."
   },
@@ -94,7 +94,7 @@
     "translate": "uçurtma",
     "pronounce": "kayt",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_kite",
     "sentence": "The kite is flying high.",
     "sentenceTranslate": "Uçurtma yüksekten uçuyor."
   },
@@ -103,7 +103,7 @@
     "translate": "lamba",
     "pronounce": "lamp",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_lamp",
     "sentence": "The lamp is bright.",
     "sentenceTranslate": "Lamba parlak."
   },
@@ -112,7 +112,7 @@
     "translate": "maymun",
     "pronounce": "mon-ki",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_monkey",
     "sentence": "The monkey is climbing.",
     "sentenceTranslate": "Maymun tırmanıyor."
   },
@@ -121,7 +121,7 @@
     "translate": "defter",
     "pronounce": "noht-buk",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_notebook",
     "sentence": "I wrote in my notebook.",
     "sentenceTranslate": "Defterime yazdım."
   },
@@ -130,7 +130,7 @@
     "translate": "portakal",
     "pronounce": "or-inj",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_orange",
     "sentence": "She ate an orange.",
     "sentenceTranslate": "O bir portakal yedi."
   },
@@ -139,7 +139,7 @@
     "translate": "kurşun kalem",
     "pronounce": "pen-sil",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_pencil",
     "sentence": "The pencil is sharp.",
     "sentenceTranslate": "Kurşun kalem keskin."
   },
@@ -148,7 +148,7 @@
     "translate": "kraliçe",
     "pronounce": "kwin",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_queen",
     "sentence": "The queen wears a crown.",
     "sentenceTranslate": "Kraliçe bir taç takar."
   },
@@ -157,7 +157,7 @@
     "translate": "tavşan",
     "pronounce": "ra-bit",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_rabbit",
     "sentence": "The rabbit is hopping.",
     "sentenceTranslate": "Tavşan zıplıyor."
   },
@@ -166,7 +166,7 @@
     "translate": "yılan",
     "pronounce": "sneyk",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_snake",
     "sentence": "The snake slithered away.",
     "sentenceTranslate": "Yılan süründü ve uzaklaştı."
   },
@@ -175,7 +175,7 @@
     "translate": "masa",
     "pronounce": "tey-bıl",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_table",
     "sentence": "The table is round.",
     "sentenceTranslate": "Masa yuvarlak."
   },
@@ -184,7 +184,7 @@
     "translate": "şemsiye",
     "pronounce": "um-brel-uh",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_umbrella",
     "sentence": "I need an umbrella.",
     "sentenceTranslate": "Bir şemsiye ihtiyacım var."
   },
@@ -193,7 +193,7 @@
     "translate": "vazo",
     "pronounce": "veys",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_vase",
     "sentence": "The vase is beautiful.",
     "sentenceTranslate": "Vazo güzel."
   },
@@ -202,7 +202,7 @@
     "translate": "su",
     "pronounce": "wo-ter",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_water",
     "sentence": "Drink a glass of water.",
     "sentenceTranslate": "Bir bardak su iç."
   },
@@ -211,7 +211,7 @@
     "translate": "yoğurt",
     "pronounce": "yo-gurt",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_yogurt",
     "sentence": "She eats yogurt every day.",
     "sentenceTranslate": "Her gün yoğurt yer."
   },
@@ -220,7 +220,7 @@
     "translate": "zebra",
     "pronounce": "zee-bruh",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_zebra",
     "sentence": "The zebra has stripes.",
     "sentenceTranslate": "Zebra çizgili."
   },
@@ -229,7 +229,7 @@
     "translate": "uçak",
     "pronounce": "air-pleyn",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_airplane",
     "sentence": "The airplane is flying.",
     "sentenceTranslate": "Uçak uçuyor."
   },
@@ -238,7 +238,7 @@
     "translate": "bisiklet",
     "pronounce": "bahy-sik-uhl",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_bicycle",
     "sentence": "She rides a bicycle.",
     "sentenceTranslate": "O bisiklet biniyor."
   },
@@ -247,7 +247,7 @@
     "translate": "bulut",
     "pronounce": "klaud",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_cloud",
     "sentence": "The cloud is white.",
     "sentenceTranslate": "Bulut beyaz."
   },
@@ -256,7 +256,7 @@
     "translate": "ejderha",
     "pronounce": "drag-uhn",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_dragon",
     "sentence": "The dragon breathes fire.",
     "sentenceTranslate": "Ejderha ateş üflüyor."
   },
@@ -265,7 +265,7 @@
     "translate": "kartal",
     "pronounce": "ee-guhl",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_eagle",
     "sentence": "The eagle is soaring.",
     "sentenceTranslate": "Kartal süzülüyor."
   },
@@ -274,7 +274,7 @@
     "translate": "futbol",
     "pronounce": "fut-bawl",
     "difficulty": "EASY",
-    "imgResId": null,
+    "imgResId": "icon_football",
     "sentence": "They play football on weekends.",
     "sentenceTranslate": "Hafta sonları futbol oynarlar."
   },
@@ -283,7 +283,7 @@
     "translate": "zürafa",
     "pronounce": "juh-raf",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_giraffe",
     "sentence": "The giraffe has a long neck.",
     "sentenceTranslate": "Zürafa uzun bir boynu var."
   },
@@ -292,7 +292,7 @@
     "translate": "ufuk",
     "pronounce": "huh-rai-zuhn",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_horizon",
     "sentence": "The sun sets on the horizon.",
     "sentenceTranslate": "Güneş ufukta batıyor."
   },
@@ -301,7 +301,7 @@
     "translate": "kar evi",
     "pronounce": "ig-loo",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_igloo",
     "sentence": "The igloo is made of ice.",
     "sentenceTranslate": "Kar evi, buzdan yapılmıştır."
   },
@@ -310,7 +310,7 @@
     "translate": "ceket",
     "pronounce": "ja-kit",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_jacket",
     "sentence": "He wore a warm jacket.",
     "sentenceTranslate": "Sıcak bir ceket giydi."
   },
@@ -319,7 +319,7 @@
     "translate": "koala",
     "pronounce": "ko-ah-luh",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_koala",
     "sentence": "The koala is sleeping in a tree.",
     "sentenceTranslate": "Koala bir ağacın üzerinde uyuyor."
   },
@@ -328,7 +328,7 @@
     "translate": "fener kulesi",
     "pronounce": "laɪt-haʊs",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_lighthouse",
     "sentence": "The lighthouse guides ships.",
     "sentenceTranslate": "Fener kulesi gemilere yol gösterir."
   },
@@ -337,7 +337,7 @@
     "translate": "mıknatıs",
     "pronounce": "mag-nit",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_magnet",
     "sentence": "The magnet sticks to the fridge.",
     "sentenceTranslate": "Mıknatıs buzdolabına yapışır."
   },
@@ -346,7 +346,7 @@
     "translate": "roman",
     "pronounce": "nov-uhl",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_novel",
     "sentence": "She is reading a novel.",
     "sentenceTranslate": "O bir roman okuyor."
   },
@@ -355,7 +355,7 @@
     "translate": "ahtapot",
     "pronounce": "ok-tuh-puhs",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_octopus",
     "sentence": "The octopus has eight arms.",
     "sentenceTranslate": "Ahtapotun sekiz kolu var."
   },
@@ -364,7 +364,7 @@
     "translate": "piramit",
     "pronounce": "pyr-uh-mid",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_pyramid",
     "sentence": "The pyramid is an ancient structure.",
     "sentenceTranslate": "Piramit eski bir yapıdır."
   },
@@ -373,7 +373,7 @@
     "translate": "yorgan",
     "pronounce": "kwilt",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_quilt",
     "sentence": "She made a beautiful quilt.",
     "sentenceTranslate": "Güzel bir yorgan yaptı."
   },
@@ -382,7 +382,7 @@
     "translate": "robot",
     "pronounce": "roh-bot",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_robot",
     "sentence": "The robot is programmed to assist.",
     "sentenceTranslate": "Robot yardımcı olmak için programlanmıştır."
   },
@@ -391,7 +391,7 @@
     "translate": "kar tanesi",
     "pronounce": "snoh-fleyk",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_snowflake",
     "sentence": "Each snowflake is unique.",
     "sentenceTranslate": "Her kar tanesi benzersizdir."
   },
@@ -400,25 +400,16 @@
     "translate": "teleskop",
     "pronounce": "tel-uh-skohp",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_telescope",
     "sentence": "He uses a telescope to view stars.",
     "sentenceTranslate": "Yıldızları görmek için teleskop kullanıyor."
-  },
-  {
-    "word": "umbrella",
-    "translate": "şemsiye",
-    "pronounce": "uhm-brel-uh",
-    "difficulty": "EASY",
-    "imgResId": null,
-    "sentence": "She opened her umbrella.",
-    "sentenceTranslate": "Şemsiyesini açtı."
   },
   {
     "word": "village",
     "translate": "köy",
     "pronounce": "vil-ij",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_village",
     "sentence": "They live in a small village.",
     "sentenceTranslate": "Küçük bir köyde yaşıyorlar."
   },
@@ -427,7 +418,7 @@
     "translate": "balina",
     "pronounce": "wehl",
     "difficulty": "MEDIUM",
-    "imgResId": null,
+    "imgResId": "icon_whale",
     "sentence": "The whale is swimming in the ocean.",
     "sentenceTranslate": "Balina okyanusta yüzüyor."
   },
@@ -436,7 +427,7 @@
     "translate": "ksilofon",
     "pronounce": "zai-luh-fon",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_xylophone",
     "sentence": "He plays the xylophone.",
     "sentenceTranslate": "O ksilofon çalıyor."
   },
@@ -445,7 +436,7 @@
     "translate": "yat",
     "pronounce": "yaht",
     "difficulty": "HARD",
-    "imgResId": null,
+    "imgResId": "icon_yacht",
     "sentence": "They sailed on a yacht.",
     "sentenceTranslate": "Bir yatla denize açıldılar."
   }

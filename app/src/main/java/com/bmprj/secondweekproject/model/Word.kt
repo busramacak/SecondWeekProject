@@ -13,7 +13,7 @@ data class Word(
     val translate:String,
     val pronounce:String,
     val difficulty: Difficulty,
-    val imgResId:Int?,
+    val imgResId:String,
     val isLearned:Boolean=false,
     val sentence:String,
     val sentenceTranslate:String

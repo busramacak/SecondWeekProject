@@ -11,6 +11,6 @@
         <item name="windowSplashScreenBackground">#264264</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/icon_app</item>
         <item name="postSplashScreenTheme">@style/Theme.SecondWeekProject</item>
-        <item name="windowSplashScreenAnimationDuration">2000</item>
+        <item name="windowSplashScreenAnimationDuration">3000</item>
     </style>
 </resources>

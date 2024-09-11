@@ -8,6 +8,7 @@ import com.bmprj.secondweekproject.R
 import com.bmprj.secondweekproject.base.BaseFragment
 import com.bmprj.secondweekproject.databinding.FragmentDetailBinding
 import com.bmprj.secondweekproject.util.UiState
+import com.bmprj.secondweekproject.util.getDrawableIdFromName
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -33,6 +34,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                             wordText.text = state.result.word
                             wordPronounce.text = state.result.pronounce
                             wordTranslate.text = state.result.translate
+                            imgg.setImageResource(getDrawableIdFromName(requireContext(),state.result.imgResId))
                             sentence.text = state.result.sentence
                             sentenceTranslate.text = state.result.sentenceTranslate
                             learnButton.text = if (state.result.isLearned) {

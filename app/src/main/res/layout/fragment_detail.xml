@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailToolbar"
@@ -56,10 +56,20 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:alpha="0.7"
-        android:textSize="15sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wordText"
         tools:text="ökunuşu" />
+
+    <ImageView
+        android:id="@+id/imgg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/wordTranslate"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <TextView
@@ -68,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="10dp"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/sentence"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="turkçesi" />
@@ -81,7 +91,7 @@
         android:background="#EA9595"
         android:paddingVertical="15dp"
         android:paddingStart="20dp"
-        android:textSize="17sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/sentenceTranslate"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="cümle" />
@@ -93,7 +103,7 @@
         android:paddingStart="20dp"
         android:paddingVertical="15dp"
         android:layout_marginBottom="40dp"
-        android:textSize="17sp"
+        android:textSize="20sp"
         android:background="#EA9595"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
