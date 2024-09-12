@@ -22,4 +22,7 @@ interface WordDAO {
 
     @Query("UPDATE word SET isLearned=:isLerned WHERE id = :id")
     suspend fun setLearned(id:Int, isLerned:Int)
+
+    @Query("SELECT * FROM word WHERE word LIKE '%' || :query || '%'")
+    suspend fun getWord(query:String): List<Word>
 }

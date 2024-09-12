@@ -18,6 +18,9 @@ class WordListViewModel @Inject constructor(
 
     private val words = MutableStateFlow<UiState<List<Word>>>(UiState.Loading)
     val _words = words.asStateFlow()
+    private val _filteredCoins = MutableStateFlow<List<Word>>(listOf())
+    val filteredCoins = _filteredCoins.asStateFlow()
+
 
     fun gelAllWords() = viewModelScope.launch {
         dbRepository.getAllWord().collect { wordList ->
@@ -33,4 +36,12 @@ class WordListViewModel @Inject constructor(
             words.emit(UiState.Success(mix))
         }
     }
+
+    fun getDataForQuery(query: String) = viewModelScope.launch {
+        dbRepository.getWord(query).collect{
+            _filteredCoins.emit(it)
+        }
+
+    }
+
 }

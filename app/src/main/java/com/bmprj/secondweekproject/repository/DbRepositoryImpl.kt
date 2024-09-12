@@ -29,4 +29,8 @@ class DbRepositoryImpl @Inject constructor(
     override suspend fun setLearned(id: Int, isLearned:Int): Flow<Unit> = flow {
         emit(wordDao.setLearned(id,isLearned))
     }
+
+    override suspend fun getWord(query: String): Flow<List<Word>> =flow {
+        emit(wordDao.getWord(query))
+    }
 }
