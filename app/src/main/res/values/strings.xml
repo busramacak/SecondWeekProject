@@ -9,4 +9,14 @@
     <string name="learned">Learned</string>
     <string name="unLearned">UnLearned</string>
     <string name="searchHint">Search a word</string>
+
+    <string name="addWordTitle">Add New Word</string>
+    <string name="wordText">English Word</string>
+    <string name="translate">Translation of the word</string>
+    <string name="pronounce">Word Pronounce</string>
+    <string name="sentence">English Sentence</string>
+    <string name="sentenceTranslate">Translation of the sentence</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="difficulty">Difficulty:</string>
 </resources>

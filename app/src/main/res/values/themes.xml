@@ -1,16 +1,16 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.SecondWeekProject" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">#4F378B</item>
     </style>
 
     <style name="Theme.SecondWeekProject" parent="Base.Theme.SecondWeekProject" />
 
     <style name="Theme.MySplash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">#264264</item>
+        <item name="windowSplashScreenBackground">#AA71D0</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/icon_app</item>
         <item name="postSplashScreenTheme">@style/Theme.SecondWeekProject</item>
         <item name="windowSplashScreenAnimationDuration">3000</item>
     </style>
+
 </resources>

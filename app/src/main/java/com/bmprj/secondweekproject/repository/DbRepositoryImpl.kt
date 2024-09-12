@@ -7,14 +7,14 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class DbRepositoryImpl @Inject constructor(
-    private val wordDao:WordDAO
+    private val wordDao: WordDAO,
 ) : DbRepository {
     override suspend fun insertAllWord(wordList: List<Word>): Flow<Unit> = flow {
         emit(wordDao.insertAllWords(wordList))
     }
 
 
-    override suspend fun getAllWord(): Flow<List<Word>> = flow{
+    override suspend fun getAllWord(): Flow<List<Word>> = flow {
         emit(wordDao.getAllWords())
     }
 
@@ -26,11 +26,15 @@ class DbRepositoryImpl @Inject constructor(
         emit(wordDao.getDetail(id))
     }
 
-    override suspend fun setLearned(id: Int, isLearned:Int): Flow<Unit> = flow {
-        emit(wordDao.setLearned(id,isLearned))
+    override suspend fun setLearned(id: Int, isLearned: Int): Flow<Unit> = flow {
+        emit(wordDao.setLearned(id, isLearned))
     }
 
-    override suspend fun getWord(query: String): Flow<List<Word>> =flow {
+    override suspend fun getWord(query: String): Flow<List<Word>> = flow {
         emit(wordDao.getWord(query))
+    }
+
+    override suspend fun addNewWord(word: Word): Flow<Unit> =flow {
+        emit(wordDao.addNewWord(word))
     }
 }

@@ -8,6 +8,9 @@ import com.bmprj.secondweekproject.util.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.single
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -18,8 +21,12 @@ class WordListViewModel @Inject constructor(
 
     private val words = MutableStateFlow<UiState<List<Word>>>(UiState.Loading)
     val _words = words.asStateFlow()
-    private val _filteredCoins = MutableStateFlow<List<Word>>(listOf())
-    val filteredCoins = _filteredCoins.asStateFlow()
+
+    private val filteredCoins = MutableStateFlow<List<Word>>(listOf())
+    val _filteredCoins = filteredCoins.asStateFlow()
+
+    private val isNewWordAdd = MutableStateFlow<UiState<Unit>>(UiState.Loading)
+    val _isNewWordAdd  = isNewWordAdd.asStateFlow()
 
 
     fun gelAllWords() = viewModelScope.launch {
@@ -39,9 +46,23 @@ class WordListViewModel @Inject constructor(
 
     fun getDataForQuery(query: String) = viewModelScope.launch {
         dbRepository.getWord(query).collect{
-            _filteredCoins.emit(it)
+            filteredCoins.emit(it)
         }
 
     }
+
+    fun addNewWord(wordModel: Word) = viewModelScope.launch{
+        dbRepository.addNewWord(wordModel)
+            .onStart {
+                isNewWordAdd.emit(UiState.Loading)
+            }
+            .catch {
+                isNewWordAdd.emit(UiState.Error(it))
+            }
+            .collect{
+                isNewWordAdd.emit(UiState.Success(it))
+            }
+    }
+
 
 }

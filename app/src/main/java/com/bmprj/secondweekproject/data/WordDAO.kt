@@ -25,4 +25,7 @@ interface WordDAO {
 
     @Query("SELECT * FROM word WHERE word LIKE '%' || :query || '%'")
     suspend fun getWord(query:String): List<Word>
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun addNewWord(word:Word):Unit
 }

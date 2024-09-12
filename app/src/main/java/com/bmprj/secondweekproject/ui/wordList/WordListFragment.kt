@@ -1,20 +1,29 @@
 package com.bmprj.secondweekproject.ui.wordList
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.graphics.alpha
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bmprj.secondweekproject.R
 import com.bmprj.secondweekproject.base.BaseFragment
+import com.bmprj.secondweekproject.databinding.AddWordBottomLayoutBinding
 import com.bmprj.secondweekproject.databinding.FragmentWordListBinding
 import com.bmprj.secondweekproject.model.Word
 import com.bmprj.secondweekproject.ui.WordAdapter
 import com.bmprj.secondweekproject.util.Difficulty
 import com.bmprj.secondweekproject.util.UiState
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -43,29 +52,90 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
     private fun setupListeners() {
         binding.swipeRefresh.setOnRefreshListener {
             viewModel.refreshData()
-            binding.swipeRefresh.isRefreshing=false
+            binding.swipeRefresh.isRefreshing = false
         }
+
+        binding.fab.setOnClickListener { fabClicked() }
+    }
+
+    private fun fabClicked() {
+        val addWordLayoutBinding =
+            AddWordBottomLayoutBinding.inflate(LayoutInflater.from(requireContext()))
+        val bottomSheet = BottomSheetDialog(requireContext())
+        bottomSheet.setContentView(addWordLayoutBinding.root)
+
+        with(addWordLayoutBinding) {
+            confirmBtn.setOnClickListener {
+                val word = wordEdt.editText?.text.toString()
+                val translate = translateEdt.editText?.text.toString()
+                val pronounce = pronounceEdt.editText?.text.toString()
+                val sentence = sentenceEdt.editText?.text.toString()
+                val newWordImg = "icon_new_word"
+                val sentenceTranslate = sentenceTranslateEdt.editText?.text.toString()
+                val rating = ratingBar.rating
+                val difficulty = when (rating) {
+                    1.0F -> Difficulty.EASY
+                    2.0F -> Difficulty.MEDIUM
+                    else -> Difficulty.HARD
+                }
+
+                val wordModel = Word(
+                    word = word,
+                    translate = translate,
+                    pronounce = pronounce,
+                    difficulty = difficulty,
+                    imgResId = newWordImg,
+                    sentence = sentence,
+                    sentenceTranslate = sentenceTranslate
+                )
+
+                if (word.isEmpty() || translate.isEmpty() || pronounce.isEmpty() || sentence.isEmpty() || sentenceTranslate.isEmpty() || rating == 0f) {
+                    Toast.makeText(
+                        context,
+                        "Please fill in all fields and rate the word!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    addNewWord(wordModel)
+                    bottomSheet.dismiss()
+                }
+
+            }
+            cancelBtn.setOnClickListener { bottomSheet.dismiss() }
+            bottomSheet.show()
+
+        }
+
+    }
+
+    private fun addNewWord(wordModel: Word) {
+        viewModel.addNewWord(wordModel)
     }
 
     private fun setupAdapter() {
-        with(binding){
-            wordListRecy.layoutManager= StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
-            wordListRecy.adapter=wordAdapter
-            searchRecyclerView.layoutManager =StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+        with(binding) {
+            wordListRecy.layoutManager =
+                StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            wordListRecy.adapter = wordAdapter
+            searchRecyclerView.layoutManager =
+                StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             searchRecyclerView.adapter = searchListAdapter
         }
     }
 
-    private fun cardClicked(id:Int){
-        val action = WordListFragmentDirections.actionWordListFragmentToDetailFragment(id, getString(R.string.word))
+    private fun cardClicked(id: Int) {
+        val action = WordListFragmentDirections.actionWordListFragmentToDetailFragment(
+            id,
+            getString(R.string.word)
+        )
         findNavController().navigate(action)
     }
 
-    private fun setupLiveDataObserver(){
+    private fun setupLiveDataObserver() {
         lifecycleScope.launch {
-            viewModel._words.collect{ state ->
-                when(state){
-                    is UiState.Success ->{
+            viewModel._words.collect { state ->
+                when (state) {
+                    is UiState.Success -> {
                         wordAdapter.updateList(state.result)
                         searchListAdapter.updateList(state.result)
                     }
@@ -73,6 +143,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
                     is UiState.Error -> {
                         println(state.error.message)
                     }
+
                     UiState.Loading -> {
 
                     }
@@ -82,11 +153,26 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
         }
 
         lifecycleScope.launch {
-            viewModel.filteredCoins.collect {
+            viewModel._filteredCoins.collect {
                 searchListAdapter.updateList(it)
             }
         }
 
-    }
+        lifecycleScope.launch {
+            viewModel._isNewWordAdd.collect { state ->
+                when(state){
+                    is UiState.Error -> {
+                        Toast.makeText(requireContext(),"Someting wrong. Please try again later.", Toast.LENGTH_SHORT).show()
+                    }
+                    UiState.Loading -> {
 
+                    }
+                    is UiState.Success -> {
+                        viewModel.gelAllWords()
+                    }
+                }
+            }
+        }
+
+    }
 }

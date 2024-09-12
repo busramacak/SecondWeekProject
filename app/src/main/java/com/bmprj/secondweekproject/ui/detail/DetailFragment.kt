@@ -100,13 +100,15 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     }
 
     private fun backButtonClicked() {
-        val action = if (back == getString(R.string.learned)) {
-            DetailFragmentDirections.actionDetailFragmentToLearnedWordsFragment()
-        } else {
-            DetailFragmentDirections.actionDetailFragmentToWordListFragment()
-        }
+//        DetailFragmentDirections.actionDetailFragmentToLearnedWordsFragment()
+//    } else {
+//        DetailFragmentDirections.actionDetailFragmentToWordListFragment()
+//    }
+//
+//    findNavController().navigate(action) val action = if (back == getString(R.string.learned)) {
 
-        findNavController().navigate(action)
+
+        findNavController().navigateUp()
     }
 
 

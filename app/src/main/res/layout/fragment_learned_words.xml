@@ -10,7 +10,7 @@
         android:id="@+id/materialToolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFC107"
+        android:background="@color/toolBarColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -13,18 +13,18 @@
         android:id="@+id/materialToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFC107"
+        android:background="@color/toolBarColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/wordListTitle" >
+        app:title="@string/wordListTitle">
 
         <com.google.android.material.search.SearchBar
             android:id="@+id/searchBar"
             style="@style/Widget.Material3.Search.ActionButton.Overflow"
             android:layout_width="wrap_content"
-            android:layout_gravity="end"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:layout_gravity="end" />
 
     </com.google.android.material.appbar.MaterialToolbar>
 
@@ -57,6 +57,16 @@
             android:layout_width="match_parent"
             android:layout_height="0dp" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/icon_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
