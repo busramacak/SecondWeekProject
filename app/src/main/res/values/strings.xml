@@ -10,6 +10,9 @@
     <string name="unLearned">UnLearned</string>
     <string name="searchHint">Search a word</string>
 
+    <string name="notFound">The relevant word could not be found.</string>
+    <string name="nothing">You haven\'t learned any words yet.</string>
+
     <string name="addWordTitle">Add New Word</string>
     <string name="wordText">English Word</string>
     <string name="translate">Translation of the word</string>

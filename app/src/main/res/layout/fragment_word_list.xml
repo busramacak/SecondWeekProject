@@ -36,6 +36,14 @@
         app:layout_anchor="@id/searchBar"
         tools:ignore="NotSibling">
 
+        <TextView
+            android:id="@+id/searchText"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/notFound"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/searchRecyclerView"
             android:layout_width="match_parent"

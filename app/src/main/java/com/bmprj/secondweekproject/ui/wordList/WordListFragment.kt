@@ -1,13 +1,7 @@
 package com.bmprj.secondweekproject.ui.wordList
 
-import android.app.Dialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.graphics.alpha
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -20,11 +14,10 @@ import com.bmprj.secondweekproject.databinding.FragmentWordListBinding
 import com.bmprj.secondweekproject.model.Word
 import com.bmprj.secondweekproject.ui.WordAdapter
 import com.bmprj.secondweekproject.util.Difficulty
-import com.bmprj.secondweekproject.util.UiState
 import com.bmprj.secondweekproject.util.toast
+import com.bmprj.secondweekproject.util.toastLong
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -126,42 +119,42 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
     }
 
     private fun setupLiveDataObserver() {
-        lifecycleScope.launch {
-            viewModel._words.collect { state ->
-                when (state) {
-                    is UiState.Success -> {
-                        wordAdapter.updateList(state.result)
-                        searchListAdapter.updateList(state.result)
-                    }
-                    is UiState.Error -> {
-                        println(state.error.message)
-                    }
 
-                    UiState.Loading -> {}
-                }
-
+        viewModel._words.handleState(
+            onLoading = {},
+            onError = {
+                toastLong(it.message.toString())
+            },
+            onSuccess = {
+                wordAdapter.updateList(it)
+                searchListAdapter.updateList(it)
             }
-        }
+        )
+
+
 
         lifecycleScope.launch {
             viewModel._filteredCoins.collect {
+                if (it.isEmpty()) {
+                    binding.searchText.visibility = View.VISIBLE
+                } else {
+                    binding.searchText.visibility = View.INVISIBLE
+                }
                 searchListAdapter.updateList(it)
             }
         }
 
-        lifecycleScope.launch {
-            viewModel._isNewWordAdd.collect { state ->
-                when(state){
-                    is UiState.Error -> {
-                       toast(getString(R.string.somethingWrong))
-                    }
-                    UiState.Loading -> {}
-                    is UiState.Success -> {
-                        viewModel.gelAllWords()
-                    }
-                }
+
+        viewModel._isNewWordAdd.handleState(
+            onLoading = {},
+            onError = {
+                toast(getString(R.string.somethingWrong))
+            },
+            onSuccess = {
+                viewModel.gelAllWords()
             }
-        }
+        )
+
 
     }
 }

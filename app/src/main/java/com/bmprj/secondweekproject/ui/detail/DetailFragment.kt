@@ -1,14 +1,13 @@
 package com.bmprj.secondweekproject.ui.detail
 
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bmprj.secondweekproject.R
 import com.bmprj.secondweekproject.base.BaseFragment
 import com.bmprj.secondweekproject.databinding.FragmentDetailBinding
-import com.bmprj.secondweekproject.util.UiState
 import com.bmprj.secondweekproject.util.getDrawableIdFromName
+import com.bmprj.secondweekproject.util.toastLong
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,60 +24,50 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     }
 
     private fun setupLiveDataObserver() {
-        lifecycleScope.launchWhenStarted {
-            viewModel._detailWord.collect { state ->
-                when (state) {
-                    is UiState.Success -> {
-                        with(binding) {
-                            wordText.text = state.result.word
-                            wordPronounce.text = state.result.pronounce
-                            wordTranslate.text = state.result.translate
-                            imgg.setImageResource(getDrawableIdFromName(requireContext(),state.result.imgResId))
-                            sentence.text = state.result.sentence
-                            sentenceTranslate.text = state.result.sentenceTranslate
-                            learnButton.text = if (state.result.isLearned) {
-                                getString(R.string.unLearned)
-                            } else {
-                                getString(R.string.learned)
-                            }
-                        }
-                    }
-
-                    is UiState.Error -> {
-                        println(state.error.message)
-                    }
-
-                    UiState.Loading -> {
-
+        viewModel._detailWord.handleState(
+            onLoading = {},
+            onError = {
+                toastLong(it.message.toString())
+            },
+            onSuccess = {
+                with(binding) {
+                    wordText.text = it.word
+                    wordPronounce.text = it.pronounce
+                    wordTranslate.text = it.translate
+                    imgg.setImageResource(
+                        getDrawableIdFromName(
+                            requireContext(),
+                            it.imgResId
+                        )
+                    )
+                    sentence.text = it.sentence
+                    sentenceTranslate.text = it.sentenceTranslate
+                    learnButton.text = if (it.isLearned) {
+                        getString(R.string.unLearned)
+                    } else {
+                        getString(R.string.learned)
                     }
                 }
             }
-        }
+        )
 
-        lifecycleScope.launchWhenStarted {
-            viewModel._setLearned.collect { state ->
-                when (state) {
-                    is UiState.Success -> {
-                        with(binding) {
-                            learnButton.text =
-                                if (learnButton.text == getString(R.string.learned)) {
-                                    getString(R.string.unLearned)
-                                } else {
-                                    getString(R.string.learned)
-                                }
+        viewModel._setLearned.handleState(
+            onLoading = {},
+            onError = {
+                toastLong(it.message.toString())
+            },
+            onSuccess = {
+                with(binding) {
+                    learnButton.text =
+                        if (learnButton.text == getString(R.string.learned)) {
+                            getString(R.string.unLearned)
+                        } else {
+                            getString(R.string.learned)
                         }
-                    }
-
-                    is UiState.Error -> {
-                        println(state.error.message)
-                    }
-
-                    UiState.Loading -> {
-                        println("loading learn button click")
-                    }
                 }
             }
-        }
+        )
+
     }
 
     private fun setupListeners() {
@@ -99,14 +88,6 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     }
 
     private fun backButtonClicked() {
-//        DetailFragmentDirections.actionDetailFragmentToLearnedWordsFragment()
-//    } else {
-//        DetailFragmentDirections.actionDetailFragmentToWordListFragment()
-//    }
-//
-//    findNavController().navigate(action) val action = if (back == getString(R.string.learned)) {
-
-
         findNavController().navigateUp()
     }
 

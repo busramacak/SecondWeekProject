@@ -1,15 +1,14 @@
 package com.bmprj.secondweekproject.ui.learnedList
 
 
+import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.bmprj.secondweekproject.R
 import com.bmprj.secondweekproject.base.BaseFragment
 import com.bmprj.secondweekproject.databinding.FragmentLearnedWordsBinding
 import com.bmprj.secondweekproject.ui.WordAdapter
-import com.bmprj.secondweekproject.util.UiState
+import com.bmprj.secondweekproject.util.toastLong
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,22 +24,21 @@ class LearnedWordsFragment :
     }
 
     private fun setupLiveDataObserver() {
-        lifecycleScope.launchWhenStarted {
-            viewModel._learnedWords.collect { state ->
-                when (state) {
-                    is UiState.Success -> {
-                        learnedAdapter.updateList(state.result)
-                    }
-
-                    is UiState.Error -> {
-                        println(state.error.message)
-                    }
-
-                    UiState.Loading -> {}
+        viewModel._learnedWords.handleState(
+            onLoading = {},
+            onError = {
+                toastLong(it.message.toString())
+            },
+            onSuccess = {
+                if (it.isEmpty()) {
+                    binding.learnText.visibility = View.VISIBLE
+                } else {
+                    binding.learnText.visibility = View.INVISIBLE
                 }
-
+                learnedAdapter.updateList(it)
             }
-        }
+        )
+
     }
 
     private fun setupAdapter() {
