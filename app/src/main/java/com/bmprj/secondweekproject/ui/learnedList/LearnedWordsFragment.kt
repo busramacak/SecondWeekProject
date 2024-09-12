@@ -36,9 +36,7 @@ class LearnedWordsFragment :
                         println(state.error.message)
                     }
 
-                    UiState.Loading -> {
-
-                    }
+                    UiState.Loading -> {}
                 }
 
             }
@@ -54,9 +52,7 @@ class LearnedWordsFragment :
     }
 
     private fun onCardClicked(id: Int) {
-        val action = LearnedWordsFragmentDirections.actionLearnedWordsFragmentToDetailFragment(
-            id, getString(R.string.learned)
-        )
+        val action = LearnedWordsFragmentDirections.actionLearnedWordsFragmentToDetailFragment(id)
         findNavController().navigate(action)
     }
 }

@@ -37,8 +37,5 @@
         <action
             android:id="@+id/action_detailFragment_to_learnedWordsFragment"
             app:destination="@id/learnedWordsFragment" />
-        <argument
-            android:name="back"
-            app:argType="string" />
     </fragment>
 </navigation>

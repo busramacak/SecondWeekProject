@@ -19,4 +19,7 @@
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
     <string name="difficulty">Difficulty:</string>
+
+    <string name="spaceFillPls">Please fill in all fields and rate the word!</string>
+    <string name="somethingWrong">Someting wrong. Please try again later.</string>
 </resources>

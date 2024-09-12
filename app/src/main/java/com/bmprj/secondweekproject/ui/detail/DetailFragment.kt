@@ -17,7 +17,6 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     private val viewModel by viewModels<DetailViewModel>()
     private val bundle: DetailFragmentArgs by navArgs()
     private val wordId: Int by lazy { bundle.wordId }
-    private val back: String by lazy { bundle.back }
 
     override fun setupViews() {
         viewModel.getDetail(wordId)

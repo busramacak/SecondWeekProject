@@ -21,6 +21,7 @@ import com.bmprj.secondweekproject.model.Word
 import com.bmprj.secondweekproject.ui.WordAdapter
 import com.bmprj.secondweekproject.util.Difficulty
 import com.bmprj.secondweekproject.util.UiState
+import com.bmprj.secondweekproject.util.toast
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.onStart
@@ -90,11 +91,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
                 )
 
                 if (word.isEmpty() || translate.isEmpty() || pronounce.isEmpty() || sentence.isEmpty() || sentenceTranslate.isEmpty() || rating == 0f) {
-                    Toast.makeText(
-                        context,
-                        "Please fill in all fields and rate the word!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    toast(getString(R.string.spaceFillPls))
                 } else {
                     addNewWord(wordModel)
                     bottomSheet.dismiss()
@@ -124,10 +121,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
     }
 
     private fun cardClicked(id: Int) {
-        val action = WordListFragmentDirections.actionWordListFragmentToDetailFragment(
-            id,
-            getString(R.string.word)
-        )
+        val action = WordListFragmentDirections.actionWordListFragmentToDetailFragment(id)
         findNavController().navigate(action)
     }
 
@@ -139,14 +133,11 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
                         wordAdapter.updateList(state.result)
                         searchListAdapter.updateList(state.result)
                     }
-
                     is UiState.Error -> {
                         println(state.error.message)
                     }
 
-                    UiState.Loading -> {
-
-                    }
+                    UiState.Loading -> {}
                 }
 
             }
@@ -162,11 +153,9 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
             viewModel._isNewWordAdd.collect { state ->
                 when(state){
                     is UiState.Error -> {
-                        Toast.makeText(requireContext(),"Someting wrong. Please try again later.", Toast.LENGTH_SHORT).show()
+                       toast(getString(R.string.somethingWrong))
                     }
-                    UiState.Loading -> {
-
-                    }
+                    UiState.Loading -> {}
                     is UiState.Success -> {
                         viewModel.gelAllWords()
                     }
