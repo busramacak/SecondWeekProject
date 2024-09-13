@@ -1,7 +1,6 @@
 package com.bmprj.secondweekproject.ui.wordList
 
 import android.view.LayoutInflater
-import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -14,6 +13,7 @@ import com.bmprj.secondweekproject.databinding.FragmentWordListBinding
 import com.bmprj.secondweekproject.model.Word
 import com.bmprj.secondweekproject.ui.WordAdapter
 import com.bmprj.secondweekproject.util.Difficulty
+import com.bmprj.secondweekproject.util.setVisibility
 import com.bmprj.secondweekproject.util.toast
 import com.bmprj.secondweekproject.util.toastLong
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -73,27 +73,20 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
                     else -> Difficulty.HARD
                 }
 
-                val wordModel = Word(
-                    word = word,
-                    translate = translate,
-                    pronounce = pronounce,
-                    difficulty = difficulty,
-                    imgResId = newWordImg,
-                    sentence = sentence,
-                    sentenceTranslate = sentenceTranslate
-                )
+                val wordModel = Word(word = word, translate = translate, pronounce = pronounce,
+                    difficulty = difficulty, imgResId = newWordImg, sentence = sentence,
+                    sentenceTranslate = sentenceTranslate)
 
-                if (word.isEmpty() || translate.isEmpty() || pronounce.isEmpty() || sentence.isEmpty() || sentenceTranslate.isEmpty() || rating == 0f) {
+                if (word.isEmpty() || translate.isEmpty() || pronounce.isEmpty() ||
+                    sentence.isEmpty() || sentenceTranslate.isEmpty() || rating == 0f) {
                     toast(getString(R.string.spaceFillPls))
                 } else {
                     addNewWord(wordModel)
                     bottomSheet.dismiss()
                 }
-
             }
             cancelBtn.setOnClickListener { bottomSheet.dismiss() }
             bottomSheet.show()
-
         }
 
     }
@@ -123,7 +116,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
         viewModel._words.handleState(
             onLoading = {},
             onError = {
-                toastLong(it.message.toString())
+                toast(it.message.toString())
             },
             onSuccess = {
                 wordAdapter.updateList(it)
@@ -131,15 +124,9 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
             }
         )
 
-
-
         lifecycleScope.launch {
             viewModel._filteredCoins.collect {
-                if (it.isEmpty()) {
-                    binding.searchText.visibility = View.VISIBLE
-                } else {
-                    binding.searchText.visibility = View.INVISIBLE
-                }
+                binding.searchText.setVisibility(it.isEmpty())
                 searchListAdapter.updateList(it)
             }
         }
@@ -154,7 +141,5 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
                 viewModel.gelAllWords()
             }
         )
-
-
     }
 }

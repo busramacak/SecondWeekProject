@@ -34,12 +34,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                     wordText.text = it.word
                     wordPronounce.text = it.pronounce
                     wordTranslate.text = it.translate
-                    imgg.setImageResource(
-                        getDrawableIdFromName(
-                            requireContext(),
-                            it.imgResId
-                        )
-                    )
+                    imgg.setImageResource(getDrawableIdFromName(requireContext(), it.imgResId))
                     sentence.text = it.sentence
                     sentenceTranslate.text = it.sentenceTranslate
                     learnButton.text = if (it.isLearned) {
@@ -57,17 +52,14 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                 toastLong(it.message.toString())
             },
             onSuccess = {
-                with(binding) {
-                    learnButton.text =
-                        if (learnButton.text == getString(R.string.learned)) {
-                            getString(R.string.unLearned)
-                        } else {
-                            getString(R.string.learned)
-                        }
-                }
+                binding.learnButton.text =
+                    if (binding.learnButton.text == getString(R.string.learned)) {
+                        getString(R.string.unLearned)
+                    } else {
+                        getString(R.string.learned)
+                    }
             }
         )
-
     }
 
     private fun setupListeners() {
@@ -83,13 +75,10 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
         } else {
             0
         }
-
         viewModel.setLearned(wordId, isLearned)
     }
 
     private fun backButtonClicked() {
         findNavController().navigateUp()
     }
-
-
 }

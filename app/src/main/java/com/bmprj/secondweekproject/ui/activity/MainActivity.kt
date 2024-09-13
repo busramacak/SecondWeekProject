@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
     private suspend fun setupLiveDataObserver() {
         val result = CompletableDeferred<Boolean>()
-        lifecycleScope.launchWhenStarted {
+        lifecycleScope.launch {
             viewModel._insert.collect { state ->
                 when (state) {
                     is UiState.Success -> {
@@ -97,14 +97,10 @@ class MainActivity : AppCompatActivity() {
                         result.complete(false)
                     }
 
-                    UiState.Loading -> {
-                        println("loadinggggg")
-                    }
+                    UiState.Loading -> {}
                 }
-
             }
         }
-
         resultt = result.await()
     }
 }

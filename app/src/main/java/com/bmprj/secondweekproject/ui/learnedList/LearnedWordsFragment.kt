@@ -1,13 +1,12 @@
 package com.bmprj.secondweekproject.ui.learnedList
 
-
-import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bmprj.secondweekproject.base.BaseFragment
 import com.bmprj.secondweekproject.databinding.FragmentLearnedWordsBinding
 import com.bmprj.secondweekproject.ui.WordAdapter
+import com.bmprj.secondweekproject.util.setVisibility
 import com.bmprj.secondweekproject.util.toastLong
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,15 +29,10 @@ class LearnedWordsFragment :
                 toastLong(it.message.toString())
             },
             onSuccess = {
-                if (it.isEmpty()) {
-                    binding.learnText.visibility = View.VISIBLE
-                } else {
-                    binding.learnText.visibility = View.INVISIBLE
-                }
+                binding.learnText.setVisibility(it.isEmpty())
                 learnedAdapter.updateList(it)
             }
         )
-
     }
 
     private fun setupAdapter() {
