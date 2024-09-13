@@ -1,7 +1,5 @@
 ## MY WORD BOOK
 
-My Word Book uygulaması ile İngilizce kelimelerinizi kolayca yönetebilirsiniz. Uygulamada:
-
 With the My Word Book app, you can easily manage your English vocabulary. In the app, you can:
 - Add new words and customize them.
 - Mark words as "Learned" from the word detail screen.
