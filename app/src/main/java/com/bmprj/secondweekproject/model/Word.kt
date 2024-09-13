@@ -10,11 +10,14 @@ data class Word(
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0,
     val word:String,
-    val translate:String,
+    val translateTr:String,
+    val translateFr:String,
     val pronounce:String,
+    val pronounceFr:String,
     val difficulty: Difficulty,
     val imgResId:String,
     val isLearned:Boolean=false,
     val sentence:String,
-    val sentenceTranslate:String
+    val sentenceTr:String,
+    val sentenceFr:String
 )

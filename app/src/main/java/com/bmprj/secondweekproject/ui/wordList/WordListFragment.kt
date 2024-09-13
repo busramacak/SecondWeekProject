@@ -49,7 +49,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
             binding.swipeRefresh.isRefreshing = false
         }
 
-        binding.fab.setOnClickListener { fabClicked() }
+//        binding.fab.setOnClickListener { fabClicked() }
     }
 
     private fun fabClicked() {
@@ -61,7 +61,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
         with(addWordLayoutBinding) {
             confirmBtn.setOnClickListener {
                 val word = wordEdt.editText?.text.toString()
-                val translate = translateEdt.editText?.text.toString()
+                val translateTr = translateEdt.editText?.text.toString()
                 val pronounce = pronounceEdt.editText?.text.toString()
                 val sentence = sentenceEdt.editText?.text.toString()
                 val newWordImg = "icon_new_word"
@@ -73,17 +73,17 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
                     else -> Difficulty.HARD
                 }
 
-                val wordModel = Word(word = word, translate = translate, pronounce = pronounce,
-                    difficulty = difficulty, imgResId = newWordImg, sentence = sentence,
-                    sentenceTranslate = sentenceTranslate)
+//                val wordModel = Word(word = word, translateTr = translateTr, pronounce = pronounce,
+//                    difficulty = difficulty, imgResId = newWordImg, sentence = sentence,
+//                    sentenceTranslate = sentenceTranslate)
 
-                if (word.isEmpty() || translate.isEmpty() || pronounce.isEmpty() ||
-                    sentence.isEmpty() || sentenceTranslate.isEmpty() || rating == 0f) {
-                    toast(getString(R.string.spaceFillPls))
-                } else {
-                    addNewWord(wordModel)
-                    bottomSheet.dismiss()
-                }
+//                if (word.isEmpty() || translate.isEmpty() || pronounce.isEmpty() ||
+//                    sentence.isEmpty() || sentenceTranslate.isEmpty() || rating == 0f) {
+//                    toast(getString(R.string.spaceFillPls))
+//                } else {
+////                    addNewWord(wordModel)
+//                    bottomSheet.dismiss()
+//                }
             }
             cancelBtn.setOnClickListener { bottomSheet.dismiss() }
             bottomSheet.show()

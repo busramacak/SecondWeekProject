@@ -37,27 +37,36 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/us"
+        app:layout_constraintBottom_toBottomOf="@+id/wordText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/wordText" />
+
     <TextView
         android:id="@+id/wordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:layout_marginStart="20dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/detailToolbar"
         tools:text="örünek ing kelime" />
 
     <TextView
-        android:id="@+id/wordPronounce"
+        android:id="@+id/pronounce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
         android:alpha="0.7"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/wordText"
         app:layout_constraintTop_toBottomOf="@+id/wordText"
         tools:text="ökunuşu" />
 
@@ -67,19 +76,60 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/wordTranslate"
+        app:layout_constraintBottom_toTopOf="@+id/sentence"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/france"
+        app:layout_constraintBottom_toBottomOf="@+id/translateFr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/translateFr" />
 
     <TextView
-        android:id="@+id/wordTranslate"
+        android:id="@+id/translateFr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/pronounce"
+        tools:text="fransızcası" />
+
+    <TextView
+        android:id="@+id/pronounceFr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:alpha="0.7"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/translateFr"
+        app:layout_constraintTop_toBottomOf="@+id/translateFr"
+        tools:text="ökunuşu" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/tr"
+        app:layout_constraintBottom_toBottomOf="@+id/translateTr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/translateTr" />
+
+    <TextView
+        android:id="@+id/translateTr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/sentence"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/pronounceFr"
         tools:text="turkçesi" />
 
     <TextView
@@ -91,12 +141,26 @@
         android:paddingVertical="15dp"
         android:paddingStart="20dp"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/sentenceTranslate"
+        app:layout_constraintBottom_toTopOf="@+id/sentenceFr"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="cümle" />
 
     <TextView
-        android:id="@+id/sentenceTranslate"
+        android:id="@+id/sentenceFr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingVertical="15dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp"
+        android:background="@color/textVColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/sentenceTr"
+        tools:text="cümle türkçesi" />
+
+    <TextView
+        android:id="@+id/sentenceTr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="20dp"
@@ -104,9 +168,9 @@
         android:layout_marginBottom="40dp"
         android:textSize="20sp"
         android:background="@color/textVColor"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:text="cümle türkçesi" />
 
 

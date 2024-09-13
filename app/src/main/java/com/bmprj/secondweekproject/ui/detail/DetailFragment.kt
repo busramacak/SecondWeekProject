@@ -32,11 +32,14 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
             onSuccess = {
                 with(binding) {
                     wordText.text = it.word
-                    wordPronounce.text = it.pronounce
-                    wordTranslate.text = it.translate
+                    pronounce.text = it.pronounce
+                    pronounceFr.text = it.pronounceFr
+                    translateTr.text = it.translateTr
+                    translateFr.text = it.translateFr
                     imgg.setImageResource(getDrawableIdFromName(requireContext(), it.imgResId))
                     sentence.text = it.sentence
-                    sentenceTranslate.text = it.sentenceTranslate
+                    sentenceTr.text = it.sentenceTr
+                    sentenceFr.text = it.sentenceFr
                     learnButton.text = if (it.isLearned) {
                         getString(R.string.unLearned)
                     } else {
