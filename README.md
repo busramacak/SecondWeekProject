@@ -16,8 +16,8 @@ The app offers a practical solution for organizing and tracking your vocabulary 
 
 <img width="250" src="https://github.com/user-attachments/assets/39d5843b-ab42-4c0e-bf0f-ad7af7ba5b72" />
 <img width="250" src="https://github.com/user-attachments/assets/40d057e5-8cfd-49bb-899d-3915be913a8b" />
-<img width="250" src="https://github.com/user-attachments/assets/df78df19-e66c-4a48-8c24-409b55575a1b" />
+<img width="250" src="https://github.com/user-attachments/assets/92dcaae8-b398-458f-8675-f13229a08af9" />
 
-<img width="250" src="https://github.com/user-attachments/assets/8d09b7c2-0c50-45b9-ae3a-36bbb41d30cb" />
+<img width="250" src="https://github.com/user-attachments/assets/3337463c-c0ff-4b41-a272-5a8c473a3007" />
 <img width="250" src="https://github.com/user-attachments/assets/f3468566-ba6b-47b9-a73c-db98d12ac87e" />
 <img width="250" src="https://github.com/user-attachments/assets/dfcb901e-318a-4788-b544-0adaa8b8e5e5" />
