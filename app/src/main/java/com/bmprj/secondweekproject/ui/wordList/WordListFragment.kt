@@ -125,10 +125,16 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
         )
 
         lifecycleScope.launch {
-            viewModel._filteredCoins.collect {
-                binding.searchText.setVisibility(it.isEmpty())
-                searchListAdapter.updateList(it)
-            }
+            viewModel._filteredWords.handleState (
+                onLoading = {},
+                onError = {
+                    toast(it.message.toString())
+                },
+                onSuccess = {
+                    binding.searchText.setVisibility(it.isEmpty())
+                    searchListAdapter.updateList(it)
+                }
+            )
         }
         viewModel._isNewWordAdd.handleState(
             onLoading = {},
