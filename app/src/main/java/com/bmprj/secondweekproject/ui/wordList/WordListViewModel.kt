@@ -31,16 +31,13 @@ class WordListViewModel @Inject constructor(
 
     fun gelAllWords() = viewModelScope.launch {
         dbRepository.getAllWord().collect { wordList ->
-            val filteredWords = wordList.filter { !it.isLearned }
-            words.emit(UiState.Success(filteredWords))
+            words.emit(UiState.Success(wordList))
         }
     }
 
     fun refreshData() = viewModelScope.launch {
         dbRepository.getAllWord().collect { wordList ->
-            val filteredWords = wordList.filter { !it.isLearned }
-            val mix = filteredWords.shuffled()
-            words.emit(UiState.Success(mix))
+            words.emit(UiState.Success(wordList))
         }
     }
 
@@ -48,7 +45,6 @@ class WordListViewModel @Inject constructor(
         dbRepository.getWord(query).collect{
             filteredCoins.emit(it)
         }
-
     }
 
     fun addNewWord(wordModel: Word) = viewModelScope.launch{

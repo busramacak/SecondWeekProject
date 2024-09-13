@@ -130,8 +130,6 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
                 searchListAdapter.updateList(it)
             }
         }
-
-
         viewModel._isNewWordAdd.handleState(
             onLoading = {},
             onError = {

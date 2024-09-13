@@ -11,7 +11,7 @@ interface WordDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAllWords(wordList:List<Word>)
 
-    @Query("SELECT * FROM word WHERE isLearned=0")
+    @Query("SELECT * FROM word WHERE isLearned=0 ORDER BY RANDOM()")
     suspend fun getAllWords():List<Word>
 
     @Query("SELECT * FROM word WHERE isLearned=1")
