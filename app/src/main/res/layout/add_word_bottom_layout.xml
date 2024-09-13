@@ -46,123 +46,106 @@
         app:layout_constraintStart_toEndOf="@+id/ratingText"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/wordEdt"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:hint="@string/wordText"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
+        android:maxLength="20"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ratingBar">
+        app:layout_constraintTop_toBottomOf="@id/ratingBar"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/word"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="20"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/translateEdt"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <EditText
+        android:id="@+id/translateTrEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:hint="@string/translate"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
+        android:hint="@string/translateTr"
+        android:maxLength="20"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/wordEdt">
+        app:layout_constraintTop_toBottomOf="@id/wordEdt"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/translate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="20"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <EditText
+        android:id="@+id/translateFrEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/translateFr"
+        android:maxLength="20"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translateTrEdt"/>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/pronounceEdt"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:hint="@string/pronounce"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
+        android:maxLength="20"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/translateEdt">
+        app:layout_constraintTop_toBottomOf="@id/translateFrEdt"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/pronounce"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="20"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <EditText
+        android:id="@+id/pronounceFrEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:hint="@string/pronounceFr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pronounceEdt"/>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/sentenceEdt"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
+        android:maxLines="1"
         android:hint="@string/sentence"
-        app:boxCornerRadiusBottomEnd="15dp"
-        app:boxCornerRadiusBottomStart="15dp"
-        app:boxCornerRadiusTopEnd="15dp"
-        app:boxCornerRadiusTopStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pronounceEdt">
+        app:layout_constraintTop_toBottomOf="@id/pronounceFrEdt"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sentence"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/sentenceTranslateEdt"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <EditText
+        android:id="@+id/sentenceTrEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:hint="@string/sentenceTranslate"
-        app:boxCornerRadiusBottomEnd="15dp"
-        app:boxCornerRadiusBottomStart="15dp"
-        app:boxCornerRadiusTopEnd="15dp"
-        app:boxCornerRadiusTopStart="15dp"
+        android:maxLines="1"
+        android:hint="@string/sentenceTr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sentenceEdt">
+        app:layout_constraintTop_toBottomOf="@id/sentenceEdt"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sentenceTranslate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <EditText
+        android:id="@+id/sentenceFrEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/sentenceFr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sentenceTrEdt"/>
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/confirmBtn"
@@ -177,7 +160,7 @@
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cancelBtn"
-        app:layout_constraintTop_toBottomOf="@+id/sentenceTranslateEdt" />
+        app:layout_constraintTop_toBottomOf="@+id/sentenceFrEdt" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/cancelBtn"
@@ -192,6 +175,6 @@
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toStartOf="@+id/confirmBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sentenceTranslateEdt" />
+        app:layout_constraintTop_toBottomOf="@+id/sentenceFrEdt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

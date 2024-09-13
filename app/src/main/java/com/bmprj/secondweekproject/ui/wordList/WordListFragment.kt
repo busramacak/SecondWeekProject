@@ -15,7 +15,6 @@ import com.bmprj.secondweekproject.ui.WordAdapter
 import com.bmprj.secondweekproject.util.Difficulty
 import com.bmprj.secondweekproject.util.setVisibility
 import com.bmprj.secondweekproject.util.toast
-import com.bmprj.secondweekproject.util.toastLong
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -49,7 +48,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
             binding.swipeRefresh.isRefreshing = false
         }
 
-//        binding.fab.setOnClickListener { fabClicked() }
+        binding.fab.setOnClickListener { fabClicked() }
     }
 
     private fun fabClicked() {
@@ -60,12 +59,24 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
 
         with(addWordLayoutBinding) {
             confirmBtn.setOnClickListener {
-                val word = wordEdt.editText?.text.toString()
-                val translateTr = translateEdt.editText?.text.toString()
-                val pronounce = pronounceEdt.editText?.text.toString()
-                val sentence = sentenceEdt.editText?.text.toString()
+                val word = wordEdt.text.toString()
+                val translateTr = translateTrEdt.text.toString()
+                val translateFr = if(translateFrEdt.text.isEmpty()){ "-"
+                }else{ translateFrEdt.text.toString() }
+                val pronounce = pronounceEdt.text.toString()
+                val pronounceFr = if (pronounceFrEdt.text.isEmpty()) {
+                    "-"
+                } else {
+                    pronounceFrEdt.text.toString()
+                }
+                val sentence = sentenceEdt.text.toString()
+                val sentenceFr = if (sentenceFrEdt.text.isEmpty()) {
+                    "-"
+                } else {
+                    sentenceFrEdt.text.toString()
+                }
                 val newWordImg = "icon_new_word"
-                val sentenceTranslate = sentenceTranslateEdt.editText?.text.toString()
+                val sentenceTr = sentenceTrEdt.text.toString()
                 val rating = ratingBar.rating
                 val difficulty = when (rating) {
                     1.0F -> Difficulty.EASY
@@ -73,17 +84,27 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
                     else -> Difficulty.HARD
                 }
 
-//                val wordModel = Word(word = word, translateTr = translateTr, pronounce = pronounce,
-//                    difficulty = difficulty, imgResId = newWordImg, sentence = sentence,
-//                    sentenceTranslate = sentenceTranslate)
+                val wordModel = Word(
+                    word = word,
+                    translateTr = translateTr,
+                    translateFr = translateFr,
+                    pronounce = pronounce,
+                    pronounceFr = pronounceFr,
+                    difficulty = difficulty,
+                    imgResId = newWordImg,
+                    sentence = sentence,
+                    sentenceTr = sentenceTr,
+                    sentenceFr = sentenceFr
+                )
 
-//                if (word.isEmpty() || translate.isEmpty() || pronounce.isEmpty() ||
-//                    sentence.isEmpty() || sentenceTranslate.isEmpty() || rating == 0f) {
-//                    toast(getString(R.string.spaceFillPls))
-//                } else {
-////                    addNewWord(wordModel)
-//                    bottomSheet.dismiss()
-//                }
+                if (word.isEmpty() || translateTr.isEmpty() || pronounce.isEmpty() ||
+                    sentence.isEmpty() || sentenceTr.isEmpty() || rating == 0f
+                ) {
+                    toast(getString(R.string.spaceFillPls))
+                } else {
+                    addNewWord(wordModel)
+                    bottomSheet.dismiss()
+                }
             }
             cancelBtn.setOnClickListener { bottomSheet.dismiss() }
             bottomSheet.show()
@@ -125,7 +146,7 @@ class WordListFragment : BaseFragment<FragmentWordListBinding>(FragmentWordListB
         )
 
         lifecycleScope.launch {
-            viewModel._filteredWords.handleState (
+            viewModel._filteredWords.handleState(
                 onLoading = {},
                 onError = {
                     toast(it.message.toString())

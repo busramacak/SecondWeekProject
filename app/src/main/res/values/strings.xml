@@ -13,15 +13,18 @@
     <string name="notFound">The relevant word could not be found.</string>
     <string name="nothing">You haven\'t learned any words yet.</string>
 
-    <string name="addWordTitle">Add New Word</string>
-    <string name="wordText">English Word</string>
-    <string name="translate">Translation of the word</string>
-    <string name="pronounce">Word Pronounce</string>
-    <string name="sentence">English Sentence</string>
-    <string name="sentenceTranslate">Translation of the sentence</string>
+    <string name="addWordTitle">Add New Word (* Required)</string>
+    <string name="wordText">*English Word</string>
+    <string name="translateTr">*Word in Turkish</string>
+    <string name="translateFr">Word in French</string>
+    <string name="pronounce">*Word English Pronounce</string>
+    <string name="pronounceFr">Word French Pronounce</string>
+    <string name="sentence">*English Sentence</string>
+    <string name="sentenceTr">*Sentence in Turkish</string>
+    <string name="sentenceFr">Sentence in French</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
-    <string name="difficulty">Difficulty:</string>
+    <string name="difficulty">*Difficulty:</string>
 
     <string name="spaceFillPls">Please fill in all fields and rate the word!</string>
     <string name="somethingWrong">Someting wrong. Please try again later.</string>
